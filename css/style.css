@@ -1,0 +1,277 @@
+:root {
+  --primary: #d37f10;
+  --bg: rgb(8, 8, 8);
+}
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: white;
+  height: 2000px;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 7%;
+  background-color: rgba(7, 7, 7, 0.8);
+  border-bottom: 1px solid var(--primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+.navbar-dwi {
+  font-size: 2rem;
+  font-weight: 20px;
+  color: rgb(255, 255, 255);
+  font-style: italic;
+}
+.navbar-dwi span {
+  font-size: 2rem;
+  font-weight: 20px;
+  color: rgb(255, 255, 255);
+  font-style: italic;
+  text-shadow: 15px 5px 15px rgb(162, 133, 16);
+}
+.navbar-nav a {
+  color: white;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0 1rem;
+}
+.navbar-nav a:hover {
+  color: var(--primary);
+}
+.navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+.navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+.navbar-extra a {
+  color: white;
+  margin: 0 0.25rem;
+}
+#menu {
+  display: none;
+}
+.kon-image img {
+  margin-left: 500px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  margin-right: 150px;
+  margin-top: 10px;
+  position: absolute;
+  top: 220px;
+  right: 200px;
+  box-shadow: 100 95 100 var(--primary);
+}
+
+/* Hero section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/nellie-adamyan-3-jn24sUPiU-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(1, 1, 3, 1) 3%,
+    rgba(255, 255, 255, 0) 25%
+  );
+}
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 50 rem;
+  text-align: right;
+  position: absolute;
+  right: 570px;
+}
+
+/* About Section */
+.about {
+  padding: 8rem 7% 1.4rem;
+}
+#kokiu {
+  text-align: center;
+  font-style: italic;
+  font-size: 2rem;
+  text-shadow: 15px 5px 15px var(--primary);
+}
+#kokiu span {
+  color: var(--primary);
+  font-style: italic;
+  font-size: 3rem;
+}
+.about-img img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  left: 665px;
+  top: 1020px;
+}
+.konten h3 {
+  text-align: center;
+  position: relative;
+  bottom: -550px;
+  left: 390px;
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+  #menu {
+    display: inline-block;
+  }
+  .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: white;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+  .navbar-nav.active {
+    right: 0;
+  }
+  .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 3rem;
+  }
+  .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+  .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+  .kon-image img {
+    position: relative;
+    left: -380px;
+    top: -600px;
+  }
+  .hero .content {
+    position: relative;
+    left: 1px;
+    bottom: -60px;
+    font-size: 1vw;
+    height: 50px;
+    text-align: center;
+  }
+  .iam {
+    font-size: 2vw;
+  }
+  .container {
+    padding: 30px;
+    font-family: Poppins;
+    color: #fff;
+  }
+  .container h1 {
+    font-size: 5vw;
+    position: relative;
+    left: 30px;
+    padding-top: 1rem;
+  }
+  .container p {
+    text-align: justify;
+    font-size: 1vw;
+    position: relative;
+    left: 40px;
+    text-align: center;
+  }
+  .hero {
+    background-image: url(../img/nellie-adamyan-3-jn24sUPiU-unsplash.jpg);
+    background-size: cover;
+    position: relative;
+  }
+  /* HP */
+  @media (max-width: 450px) {
+    html {
+      font-size: 55%;
+    }
+    #menu {
+      display: inline-block;
+    }
+    .navbar-nav {
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      background-color: white;
+      width: 30rem;
+      height: 100vh;
+      transition: 0.3s;
+    }
+    .navbar-nav.active {
+      right: 0;
+    }
+    .navbar-nav a {
+      color: var(--bg);
+      display: block;
+      margin: 1.5rem;
+      padding: 0.5rem;
+      font-size: 3rem;
+    }
+    .navbar-nav a::after {
+      transform-origin: 0 0;
+    }
+    .navbar-nav a:hover::after {
+      transform: scaleX(0.2);
+    }
+  }
+  .hero {
+    background-image: url(../img/nellie-adamyan-3-jn24sUPiU-unsplash.jpg);
+    background-size: cover;
+    position: relative;
+  }
+}
+@media (max-width: 320px) {
+  html {
+    font-size: 50%;
+  }
+  .hero {
+    background-image: url(../img/nellie-adamyan-3-jn24sUPiU-unsplash.jpg);
+    background-size: cover;
+    position: relative;
+  }
+}
